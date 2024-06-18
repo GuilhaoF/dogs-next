@@ -3,7 +3,7 @@ import PhotoGet from "./src/actions/photo-get";
 import Feed from "./src/components/feed/feed";
 
 export default async function Home() {
-  const data = await PhotoGet(); // aqui estamos chamando a função que faz a requisição para a API
+  const {data} = await PhotoGet(); // aqui estamos chamando a função que faz a requisição para a API
   return (
     <section className="max-w-xl px-4 mx-auto mt-8">
       <div className="flex  justify-between">
@@ -14,7 +14,7 @@ export default async function Home() {
         <Image className=" animate-bounce" src={'/assets/dogs.svg'} alt="dog-icon" width={60} height={30} />
       </div>
 
-      <Feed photos={data} />
+     { data &&   <Feed photos={data} /> }
     </section>
   );
 }
