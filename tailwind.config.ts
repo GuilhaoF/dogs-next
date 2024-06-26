@@ -16,6 +16,15 @@ const config: Config = {
       fontFamily: {
         spectral: ["Spectral", "serif"],
       },
+      keyframes: {
+        scaleUp: {
+          '0%': { opacity: '0', transform: 'scale(0.8)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
+      },
+      animation: {
+        scaleUp: 'scaleUp 0.3s forwards',
+      },
     },
   },
   plugins: [],
