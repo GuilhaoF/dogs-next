@@ -2,18 +2,14 @@
 
 import { PHOTO_GET } from "../functions/api";
 import apiError from "../functions/api-error";
+import { CommentProps } from "../types/commentType";
 import { Photo } from "./photo-get";
 
-export type Comment = {
-  comment_ID: string;
-  comment_post_ID: string;
-  comment_author: string;
-  comment_content: string;
-};
+
 
 export type PhotoData = {
   photo: Photo;
-  comments: Comment[];
+  comments: CommentProps[];
 };
 
 export default async function photosGet(id: string) {

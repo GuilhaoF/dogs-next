@@ -6,7 +6,7 @@ import PhotoGet, { Photo } from "../../actions/photo-get";
 import Loading from "../loading/loading";
 
 export default function Feed({ photos }: { photos: Photo[] }) {
-  const [photosFeed, setPhotosFeed] = useState<Photo[]>(photos);
+  const [, setPhotosFeed] = useState<Photo[]>(photos);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [infinite, setInfinite] = useState(photos.length < 6 ? false : true);

@@ -14,12 +14,10 @@ export type User = {
 export default async function userGet() {
   try {
     const token = cookies().get("token")?.value;
-    if (!token) {
-      alert("Token não encontrado.")
-      redirect("/login");
-    }
+    if (!token) throw new Error("Token não encontrado.");
     const { url } = USER_GET();
     const response = await fetch(url, {
+      method: 'GET',
       headers: {
         Authorization: 'Bearer ' + token,
       },
