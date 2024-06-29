@@ -5,7 +5,7 @@ import FeedPhotos from "./feed-photos";
 import PhotoGet, { Photo } from "../../actions/photo-get";
 import Loading from "../loading/loading";
 
-export default function Feed({ photos }: { photos: Photo[] }) {
+export default function Feed({ photos, user }: { photos: Photo[]; user?: 0 | string }) {
   const [, setPhotosFeed] = useState<Photo[]>(photos);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
