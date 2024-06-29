@@ -7,7 +7,7 @@ export default async function PerfilUserPage({ params }: { params: { user: strin
   const { data } = await photoGet({ user: params.user });
   if (!data) return null;
 
-  return (
+  return (  
     <section className=" mx-auto">
       <h1 className="title">{params.user}</h1>
       <Feed photos={data} user={params.user} /> 
